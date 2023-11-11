@@ -152,3 +152,11 @@ p {
     background-position: bottom;
   }
 }
+
+.cover-full {
+  width: 100%;
+}
+
+.book-details {
+  text-align: left;
+}

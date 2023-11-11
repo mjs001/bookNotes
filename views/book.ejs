@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+
+
+<body>
+  <%- include('partials/nav') %>
+  <div class="container text-center d-flex align-items-center justify-content-center">
+    <% if (locals.book) { %>
+    <div class="row">
+      <div class="col cover-container align-items-start">
+        <img class="cover-full" src="#" alt="book cover" />
+      </div>
+      <div class="col book-details align-items-end">
+        <h5 class="book-title">Title: <%= book.title %></h5>
+        <p>Subtitle: <%= book.subtitle %></p>
+        <p>Author: <%= book.author %> </p>
+        <p>Genre: <%= book.genre %> </p>
+        <p>Publisher: <%= book.publisher %> </p>
+        <p>Publish Date: <%= book.publish_date %> </p>
+        <p>Pages: <%= book.number_of_pages %> </p>
+        <a href="https://isbnsearch.org/" target="_blank"><button type="button" class="btn isbn">Notes</button></a>
+      </div>
+    </div>
+    <% } %>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+<%- include('partials/footer') %>

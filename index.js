@@ -80,14 +80,14 @@ app.get("/about", (req, res) => {
   res.render("about.ejs");
 });
 
-app.post("/search", (req, res) => {
+app.post("/book", (req, res) => {
   var isbn = req.body.isbn.trim();
   var bookMatch = myBooks.find((book) => book.isbn === isbn);
   if (bookMatch === undefined) {
     error = "No match found. Try Again";
     res.redirect("/");
   } else {
-    res.render("search.ejs", { book: bookMatch });
+    res.render("book.ejs", { book: bookMatch });
   }
 });
 
