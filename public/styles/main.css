@@ -18,6 +18,7 @@
   font-size: 1.8rem;
   color: #ddf2fd;
   font-weight: bold;
+  margin-bottom: 0px;
 }
 
 .search-submit {
@@ -30,9 +31,12 @@
   background-color: #ddf2fd !important;
 }
 
+.nav-link:hover {
+  color: #ddf2fd !important;
+}
+
 /* index.ejs bg */
 .container {
-  background-color: #f3f3f5;
   width: 100vw;
   height: 100vh;
 }
@@ -43,4 +47,108 @@
   max-height: 100%;
   background-size: contain;
   background-position: center;
+}
+
+.body-index-bg {
+  background-color: #f3f3f5;
+}
+
+/* FONTS */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bitter", serif;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+}
+
+/* inputs index */
+.form-control:focus {
+  border-color: #164863 !important;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 10px #164863 !important;
+}
+
+.isbn {
+  color: white !important;
+  background-color: #427d9d !important;
+}
+
+.isbn:hover {
+  background-color: #164863 !important;
+}
+
+.animatedText {
+  color: black;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 48px;
+  display: inline-block;
+  padding: 0;
+  border-right: 1px solid #414141;
+}
+
+.index-text {
+  color: black;
+  text-align: left;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 48px;
+  width: 40%;
+}
+
+.text-index {
+  display: flex;
+}
+
+.isbn-index {
+  padding-top: 12%;
+}
+
+.contains-items-index {
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+}
+
+.github {
+  color: #9bbec8;
+  text-decoration: none;
+}
+
+.github:hover {
+  color: #9bbec8;
+  text-decoration: underline;
+}
+
+/* index media queries */
+
+@media screen and (max-width: 576px) {
+  .isbn-index {
+    padding-top: 0%;
+  }
+
+  .contains-items-index {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+  .index-text {
+    color: black;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
+    width: 100%;
+    padding-bottom: 18%;
+  }
+
+  .background {
+    background-size: contain;
+    background-position: bottom;
+  }
 }

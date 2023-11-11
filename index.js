@@ -27,6 +27,8 @@ app.use(express.static("public"));
 // const db = pg.Client({});
 // ex
 
+var error = "";
+
 var myBooks = [
   { isbn: "9781501128035", title: "The Unhoneymooners" },
   {
@@ -62,11 +64,31 @@ var notes = [
 var selectedBook = {}; // will mirror format of books above in myBooks
 
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  if (error) {
+    res.render("index.ejs", { error: error });
+    error = "";
+  } else {
+    res.render("index.ejs");
+  }
 });
 
 app.get("/mybooks", (req, res) => {
   res.render("myBooks.ejs");
+});
+
+app.get("/about", (req, res) => {
+  res.render("about.ejs");
+});
+
+app.post("/search", (req, res) => {
+  var isbn = req.body.isbn.trim();
+  var bookMatch = myBooks.find((book) => book.isbn === isbn);
+  if (bookMatch === undefined) {
+    error = "No match found. Try Again";
+    res.redirect("/");
+  } else {
+    res.render("search.ejs", { book: bookMatch });
+  }
 });
 
 app.listen(port, () => {

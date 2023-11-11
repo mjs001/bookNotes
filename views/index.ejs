@@ -1,17 +1,25 @@
 <%- include('partials/header') %>
 
 
-<body>
+<body class="body-index-bg">
   <%- include('partials/nav') %>
-  <div class="container text-center background">
-
-    <div class="row">
-      <div class="col">
-        Write Notes for your favorite books|
-      </div>
-    </div>
-
+  <% if (locals.error) { %>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong> <%= error %> </strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
+  <% } %>
+  <div class="container text-center background contains-items-index">
+    <div class="text-index">
+      <h2 class="index-text">Save, Rate, and write notes on your read books.</h2>
+    </div>
+    <div class="isbn-index">
+      <h2>Don't know a books ISBN?</h2>
+      <a href="https://isbnsearch.org/" target="_blank"><button type="button" class="btn isbn">Find a books ISBN</button></a>
+    </div>
+  </div>
+  </div>
+  <!-- <script type="text/javascript" src="/js/typingAnimation.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
