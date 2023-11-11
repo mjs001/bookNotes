@@ -1,0 +1,13 @@
+Primary:
+
+#164863
+
+Secondary:
+
+#427D9D
+
+Accent:
+
+#9BBEC8
+
+#DDF2FD

@@ -1,0 +1,31 @@
+BookNotes Project:
+    - Frontend:
+        - Nav bar
+        - Home page
+        - Link to find isbn page
+        - myBooks page
+        - search page
+    functionality:
+        - get books from openLibrary book API (https://openlibrary.org/dev/docs/api/books)
+        - Search functionality
+        - Add books to myBooks
+        - delete books from myBooks
+        - add note component
+        - edit note component
+        - delete note
+        - make rating
+    DB:
+        - design dbs @done
+        - create myBooks table
+        - create notes table
+        - Make ElephantSQL db
+        - Hookup remote postgres to app
+    Review:
+        - review each functionality, can you:
+            - add books
+            - delete books
+            - add new note
+            - edit existing note
+            - delete note
+            - rate book
+            - search for books

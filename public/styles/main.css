@@ -1,0 +1,31 @@
+/* Navbar */
+.navbar {
+  background-color: #9bbec8;
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+.navbar-brand img {
+  margin-right: 8px;
+}
+
+.no-bullets {
+  list-style-type: none;
+}
+
+.nav-title {
+  font-size: 1.8rem;
+  color: #ddf2fd;
+  font-weight: bold;
+}
+
+.search-submit {
+  color: #ddf2fd !important;
+  border: 2px solid #ddf2fd !important;
+}
+
+.search-submit:hover {
+  color: #427d9d !important;
+  background-color: #ddf2fd !important;
+}

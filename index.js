@@ -8,6 +8,8 @@ const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+// TODO
+
 //Format for getting request openlibrary:
 // https://openlibrary.org/api/books?bibkeys=ISBN:0385472579&jscmd=data&format=json
 // ISBN is what user will input to find book
@@ -25,82 +27,46 @@ app.use(express.static("public"));
 // const db = pg.Client({});
 // ex
 
-//FEATURES:
-//Search books by ISBN or title
-
-// How to:
-/*
-
-*/
-
-//Add books to myBooks
-
-// How to:
-/*
-
-*/
-
-//Delete book from myBooks
-
-// How to:
-/*
-
-*/
-
-//make ratings out of 5
-
-// How to:
-/*
-
-*/
-
-//ADD new notes
-
-// How to:
-/*
-
-*/
-
-//edit notes
-
-// How to:
-/*
-
-*/
-
-//delete notes
-
-// How to:
-/*
-
-*/
-
 var myBooks = [
   { isbn: "9781501128035", title: "The Unhoneymooners" },
   {
     id: 1,
-    bookInfo: {
-      isbn: "9780545791434",
-      subtitle: "the Illustrated Edition",
-      author: "J. K. Rowling",
-      genres: ["Children's Books/Ages 9-12 Fiction", "Witches and warlocks"],
-      publisher: "Scholastic, Incorporated",
-      publish_date: "2022",
-      number_of_pages: "576",
-      cover: "https://covers.openlibrary.org/b/id/12960783-M.jpg",
-    },
+    isbn: "9780545791434",
+    title: "Harry Potter and the Order of the Phoenix",
+    subtitle: "the Illustrated Edition",
+    author: "J. K. Rowling",
+    genre: "Children's Books/Ages 9-12 Fiction, Witches and warlocks", //made of subjects 0 and 1
+    publisher: "Scholastic, Incorporated",
+    publish_date: "2022",
+    number_of_pages: "576",
+    cover: "https://covers.openlibrary.org/b/id/12960783-M.jpg",
     rating: 4, //out of 5
-    notes: [
-      { id: 1, timestamp: "2023-11-09T21:13:34Z", note: "Love this book!" },
-      { id: 2, timestamp: "	2023-11-08T20:13:34Z", note: "Would read again." },
-    ],
   },
 ];
 
-var selectedBook = {};
+var notes = [
+  {
+    id: 1,
+    book_id: 1,
+    timestamp: "2023-11-09T21:13:34Z",
+    note: "Love this book!",
+  },
+  {
+    id: 2,
+    book_id: 1,
+    timestamp: "	2023-11-08T20:13:34Z",
+    note: "Would read again.",
+  },
+];
+
+var selectedBook = {}; // will mirror format of books above in myBooks
 
 app.get("/", (req, res) => {
   res.render("index.ejs");
+});
+
+app.get("/mybooks", (req, res) => {
+  res.render("myBooks.ejs");
 });
 
 app.listen(port, () => {
